@@ -7,19 +7,29 @@ function getComputerChoise() {
     return arr[Math.floor(Math.random()*arr.length)]
 }
 
-//---------------------------------------------------------------
+//----------------------------------------------------------------
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === 'rock' && computerSelection === 'scissors' || playerSelection === 'paper' && computerSelection === 'rock' || playerSelection === 'scissors' && computerSelection === 'paper') {
-        console.log('You win!')
+        return 'You win!'
     } else if (playerSelection === computerSelection) {
-        console.log('Empate!')
+        return 'Empate!'
     } else {
-        console.log('You lose!')
+        return 'You lose!'
     }
 }
 
 //----------------------------------------------------------------
 
-console.log(computerSelection)
-playRound(playerSelection, computerSelection)
+function game() {
+    for (let i = 0; i < 5; i++) {
+        console.log(computerSelection)
+        return playRound(playerSelection, computerSelection)
+    }
+}
+
+//----------------------------------------------------------------
+
+
+
+console.log(game())
