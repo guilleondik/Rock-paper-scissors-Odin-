@@ -1,5 +1,5 @@
 let computerSelection = getComputerChoise()
-let playerSelection = 'paper'
+let niceComputerSelection = computerSelection.toLowerCase()
 
 
 function getComputerChoise() {
@@ -9,7 +9,7 @@ function getComputerChoise() {
 
 //----------------------------------------------------------------
 
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection, niceComputerSelection) {
     if (playerSelection === 'rock' && computerSelection === 'scissors' || playerSelection === 'paper' && computerSelection === 'rock' || playerSelection === 'scissors' && computerSelection === 'paper') {
         return 'You win!'
     } else if (playerSelection === computerSelection) {
@@ -19,17 +19,19 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+
 //----------------------------------------------------------------
 
 function game() {
     for (let i = 0; i < 5; i++) {
-        console.log(computerSelection)
-        return playRound(playerSelection, computerSelection)
+        let playerSelection = prompt('Select your weapon!', 'Rock, paper, scissors').toLowerCase()
+        playRound(playerSelection, niceComputerSelection)
+        resultado = playRound(playerSelection, computerSelection)
+        console.log(`Your picked ${playerSelection} and pc choose ${niceComputerSelection}, ${resultado}`)
     }
 }
 
 //----------------------------------------------------------------
 
+game()
 
-
-console.log(game())
